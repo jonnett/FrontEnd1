@@ -1,0 +1,22 @@
+div{
+    background-color:aqua ;
+}
+footer{
+    background-color: black;
+}
+b{
+    background-color: brown;
+}
+nav{
+    background-color: goldenrod;
+}
+#RedesSociales{
+    background-color: rgb(157, 249, 252);
+    
+}
+.LetraGrande{
+    font-size: 50px;
+}
+/*header,footer{                   es lo mismo que arriba
+    font-size:50px;
+}*/
