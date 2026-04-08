@@ -1,28 +1,204 @@
-div{
-    background-color:aqua ;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-footer{
-    background-color: black;
+
+:root {
+    --color-principal: #00bfa5; /* El turquesa de las fotos */
+    --color-oscuro: #008e7a;
+    --color-texto: #333;
+    --blanco: #ffffff;
+    --gris-claro: #f4f4f4;
 }
-b{
-    background-color: brown;
+
+body {
+    line-height: 1.6;
+    color: var(--color-texto);
+    background-color: var(--blanco);
 }
-nav{
-    background-color: goldenrod;
+
+header {
+    background: var(--blanco);
+    padding: 1rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
-#RedesSociales{
-    background-color: rgb(157, 249, 252);
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    color: var(--color-principal);
+    font-size: 1.8rem;
+}
+
+.logo span {
+    color: var(--color-texto);
+    font-weight: 300;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--color-texto);
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-menu a:hover {
+    color: var(--color-principal);
+}
+
+.btn-agenda {
+    background-color: var(--color-principal);
+    color: var(--blanco) !important;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+
+#inicio {
+    background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('ruta-a-tu-foto.jpg');
+    background-color: var(--color-principal);
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    color: var(--blanco);
+    padding: 0 5%;
+}
+
+.hero-container {
+    max-width: 600px;
+}
+
+.hero-container h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-container a {
+    display: inline-block;
+    background: var(--blanco);
+    color: var(--color-principal);
+    padding: 12px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+section {
+    padding: 80px 5%;
+    text-align: center;
+}
+
+
+.profesionales-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.profesional-card {
+    background: var(--gris-claro);
+    padding: 40px 20px;
+    border-radius: 10px;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 5px solid var(--color-principal);
+    cursor: pointer;
+}
+
+.profesional-card h3 {
+    color: var(--color-texto);
+    font-size: 1.2rem;
+}
+
+
+.info-extra {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    font-size: 0.9rem;
+    text-align: left;
+    margin-top: 15px;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+}
+
+.profesional-card:hover {
+    background: var(--color-principal);
+    color: var(--blanco);
+    transform: translateY(-10px);
+}
+
+.profesional-card:hover h3 {
+    color: var(--blanco);
+}
+
+.profesional-card:hover .info-extra {
+    max-height: 500px; /* Suficiente para el texto */
+    opacity: 1;
+}
+
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.servicio-item {
+    background: var(--blanco);
+    border: 1px solid #eee;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+
+footer {
+    background: #222;
+    color: var(--blanco);
+    padding: 50px 5%;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.footer-info a {
+    color: var(--color-principal);
+    text-decoration: none;
+}
+
+/* celular */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none; 
+    }
     
-}
-.LetraGrande{
-    font-size: 50px;
-}
-/*header,footer{                   es lo mismo que arriba
-    font-size:50px;
-}*/
-#caja1{
-    background-color: bisque;
-}
-#caja2{
-    background-color: blueviolet;
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .hero-container h2 {
+        font-size: 2rem;
+    }
 }
