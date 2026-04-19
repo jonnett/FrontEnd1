@@ -40,27 +40,61 @@
             </div>
         </section>
 
+        <!-- ========================= -->
+        <!-- 🔥 NOSOTROS (CARRUSEL PRO) -->
+        <!-- ========================= -->
         <section id="nosotros">
             <div class="nosotros-header">
                 <h2>Sobre Nosotros</h2>
                 <p class="subtitle">Tradición, tecnología y corazón en el centro de Copiapó.</p>
             </div>
 
-            <div class="nosotros-grid">
-                <article class="nosotros-item">
-                    <h3>Nuestra Trayectoria</h3>
-                    <p>Somos una clínica dental familiar con más de 10 años de trayectoria cuidando la sonrisa de nuestra comunidad, con especialistas titulados en las mejores universidades del país.</p>
-                </article>
+            <div class="nosotros-carousel">
 
-                <article class="nosotros-item">
-                    <h3>Innovación Digital</h3>
-                    <p>En NyR Dental, combinamos la experiencia con la innovación de la odontología digital y el uso de biomateriales de alta gama para garantizar resultados de excelencia.</p>
-                </article>
+                <div class="slide active">
+                    <img src="assets/fotos/nosotros/1.jpg">
+                    <div class="overlay">
+                        <p>
+                            Tradición, tecnología y corazón en el centro de Copiapó.<br><br>
+                            Somos una clínica dental familiar con más de 10 años de trayectoria cuidando la sonrisa de nuestra comunidad
+                        </p>
+                    </div>
+                </div>
 
-                <article class="nosotros-item">
-                    <h3>Cercanía y Ética</h3>
-                    <p>Aquí no solo encontrarás tecnología, sino un equipo que te recibe como familia. Nos caracterizamos por nuestra calidez, ética profesional y un compromiso con el precio justo.</p>
-                </article>
+                <div class="slide">
+                    <img src="assets/fotos/nosotros/2.jpg">
+                    <div class="overlay">
+                        <p>
+                            En NyR Dental, combinamos la experiencia de especialistas titulados en las mejores universidades del país con la innovación de la odontología digital y biomateriales de alta gama.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <img src="assets/fotos/nosotros/3.jpeg">
+                    <div class="overlay">
+                        <p>
+                            Creemos que una atención de excelencia no debe perder la calidez. Por eso, aquí no solo encontrarás tecnología de vanguardia, sino también un equipo que te recibe como parte de su propia familia
+                        </p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <img src="assets/fotos/nosotros/4.jpg">
+                    <div class="overlay">
+                        <p>
+                            Nos caracterizamos por nuestra cercanía, ética profesional y el compromiso de ofrecer siempre un precio justo.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Flechas -->
+                <button class="prev">&#10094;</button>
+                <button class="next">&#10095;</button>
+
+                <!-- Puntitos -->
+                <div class="dots"></div>
+
             </div>
         </section>
 
@@ -235,6 +269,59 @@
             <p>&copy; 2026 N&R Dental. Todos los derechos reservados.</p>
         </div>
     </footer>
+
+    <!-- 🔥 SCRIPT CARRUSEL PRO -->
+    <script>
+    let slides = document.querySelectorAll(".slide");
+    let prev = document.querySelector(".prev");
+    let next = document.querySelector(".next");
+    let dotsContainer = document.querySelector(".dots");
+
+    let index = 0;
+    let interval;
+
+    slides.forEach((_, i) => {
+        let dot = document.createElement("span");
+        dot.addEventListener("click", () => showSlide(i));
+        dotsContainer.appendChild(dot);
+    });
+
+    let dots = document.querySelectorAll(".dots span");
+
+    function showSlide(i) {
+        slides[index].classList.remove("active");
+        dots[index].classList.remove("active");
+
+        index = i;
+
+        slides[index].classList.add("active");
+        dots[index].classList.add("active");
+    }
+
+    next.onclick = () => {
+        showSlide((index + 1) % slides.length);
+        resetInterval();
+    };
+
+    prev.onclick = () => {
+        showSlide((index - 1 + slides.length) % slides.length);
+        resetInterval();
+    };
+
+    function startInterval() {
+        interval = setInterval(() => {
+            showSlide((index + 1) % slides.length);
+        }, 8000);
+    }
+
+    function resetInterval() {
+        clearInterval(interval);
+        startInterval();
+    }
+
+    dots[0].classList.add("active");
+    startInterval();
+    </script>
 
 </body>
 </html>
