@@ -279,18 +279,36 @@ footer {
     
     .nav-menu {
         position: fixed;
-        left: -100%; 
-        top: 70px;   
+        left: 50%;
+        transform: translateX(-50%) translateY(-120%);
+        top: 80px;
+
         flex-direction: column;
         background-color: var(--blanco);
+
+        width: 90%;
+        height: auto;
+
+        gap: 20px;
+        padding: 25px 20px;
+
+        border-radius: 15px;
+        box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+
+        transition: 0.4s ease;
+    }
+    #menu-toggle:checked ~ .nav-menu {
+        transform: translateX(-50%) translateY(0);
+    }
+    .nav-menu li {
         width: 100%;
-        height: 100vh;
-        gap: 30px;
-        padding-top: 50px;
-        transition: 0.5s; 
-        box-shadow: 0 10px 10px rgba(0,0,0,0.1);
     }
 
+    .nav-menu a {
+        display: block;
+        padding: 10px 5px; 
+        font-size: 1.1rem;
+    }
     .hamburger {
         display: flex;
         flex-direction: column;
@@ -306,10 +324,6 @@ footer {
         transition: 0.3s;
     }
 
-    #menu-toggle:checked ~ .nav-menu {
-        left: 0;
-    }
-
     #menu-toggle:checked ~ .hamburger span:nth-child(1) {
         transform: rotate(45deg) translate(5px, 5px);
     }
@@ -318,10 +332,6 @@ footer {
     }
     #menu-toggle:checked ~ .hamburger span:nth-child(3) {
         transform: rotate(-45deg) translate(7px, -6px);
-    }
-
-    .hero-container h2 {
-        font-size: 2rem;
     }
 }
 
