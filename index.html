@@ -41,57 +41,70 @@
             </div>
         </section>
 
-
         <section id="nosotros">
             <div class="nosotros-header">
                 <h2>Sobre Nosotros</h2>
                 <p class="subtitle">Tradición, tecnología y corazón en el centro de Copiapó.</p>
             </div>
 
-            <div class="nosotros-carousel">
+            <div class="carousel-container">
+                <input type="radio" name="slider" id="s1" checked>
+                <input type="radio" name="slider" id="s2">
+                <input type="radio" name="slider" id="s3">
+                <input type="radio" name="slider" id="s4">
 
-                <div class="slide active">
-                    <img src="assets/fotos/nosotros/1.jpg">
-                    <div class="overlay">
-                        <p>
-                             Somos una clínica dental familiar con más de 10 años de trayectoria cuidando la sonrisa de nuestra comunidad
-                        </p>
+                <div class="nosotros-carousel">
+                    <div class="slide s1">
+                        <img src="assets/fotos/nosotros/1.jpg">
+                        <div class="overlay">
+                            <p>Somos una clínica dental familiar con más de 10 años de trayectoria cuidando la sonrisa de nuestra comunidad</p>
+                        </div>
+                        <div class="arrows">
+                            <label for="s4" class="prev">&#10094;</label>
+                            <label for="s2" class="next">&#10095;</label>
+                        </div>
+                    </div>
+
+                    <div class="slide s2">
+                        <img src="assets/fotos/nosotros/2.jpg">
+                        <div class="overlay">
+                            <p>En NyR Dental, combinamos la experiencia de especialistas titulados en las mejores universidades del país con la innovación de la odontología digital y biomateriales de alta gama.</p>
+                        </div>
+                        <div class="arrows">
+                            <label for="s1" class="prev">&#10094;</label>
+                            <label for="s3" class="next">&#10095;</label>
+                        </div>
+                    </div>
+
+                    <div class="slide s3">
+                        <img src="assets/fotos/nosotros/3.jpeg">
+                        <div class="overlay">
+                            <p>Creemos que una atención de excelencia no debe perder la calidez. Por eso, aquí no solo encontrarás tecnología de vanguardia, sino también un equipo que te recibe como parte de su propia familia</p>
+                        </div>
+                        <div class="arrows">
+                            <label for="s2" class="prev">&#10094;</label>
+                            <label for="s4" class="next">&#10095;</label>
+                        </div>
+                    </div>
+
+                    <div class="slide s4">
+                        <img src="assets/fotos/nosotros/4.jpg">
+                        <div class="overlay">
+                            <p>Nos caracterizamos por nuestra cercanía, ética profesional y el compromiso de ofrecer siempre un precio justo.</p>
+                        </div>
+                        <div class="arrows">
+                            <label for="s3" class="prev">&#10094;</label>
+                            <label for="s1" class="next">&#10095;</label>
+                        </div>
                     </div>
                 </div>
 
-                <div class="slide">
-                    <img src="assets/fotos/nosotros/2.jpg">
-                    <div class="overlay">
-                        <p>
-                            En NyR Dental, combinamos la experiencia de especialistas titulados en las mejores universidades del país con la innovación de la odontología digital y biomateriales de alta gama.
-                        </p>
-                    </div>
+                <div class="dots">
+                    <label for="s1"></label>
+                    <label for="s2"></label>
+                    <label for="s3"></label>
+                    <label for="s4"></label>
                 </div>
-
-                <div class="slide">
-                    <img src="assets/fotos/nosotros/3.jpeg">
-                    <div class="overlay">
-                        <p>
-                            Creemos que una atención de excelencia no debe perder la calidez. Por eso, aquí no solo encontrarás tecnología de vanguardia, sino también un equipo que te recibe como parte de su propia familia
-                        </p>
-                    </div>
-                </div>
-
-                <div class="slide">
-                    <img src="assets/fotos/nosotros/4.jpg">
-                    <div class="overlay">
-                        <p>
-                            Nos caracterizamos por nuestra cercanía, ética profesional y el compromiso de ofrecer siempre un precio justo.
-                        </p>
-                    </div>
-                </div>
-
-
-                <button class="prev">&#10094;</button>
-                <button class="next">&#10095;</button>
-
-                <div class="dots"></div>
-
             </div>
         </section>
 
@@ -99,36 +112,42 @@
             <h2>Nuestras Especialidades</h2>
             <div class="servicios-grid">
                 <div class="servicio-card">
+                    <img src="assets/fotos/endodoncia.png" alt="Endodoncia" class="bg-card-img">
                     <h4>Endodoncia</h4>
                     <div class="info-extra">
                         <p>Tratamiento especializado en el interior del diente para salvar piezas dañadas y eliminar infecciones.</p>
                     </div>
                 </div>
                 <div class="servicio-card">
+                    <img src="assets/fotos/periodoncia.png" alt="Periodoncia" class="bg-card-img">
                     <h4>Periodoncia e implantología</h4>
                     <div class="info-extra">
                         <p>Prevención y tratamiento de enfermedades de las encías y recuperación de dientes mediante implantes dentales.</p>
                     </div>
                 </div>
                 <div class="servicio-card">
+                    <img src="assets/fotos/ortodoncia.png" alt="Ortodoncia" class="bg-card-img">
                     <h4>Ortodoncia</h4>
                     <div class="info-extra">
                         <p>Corrección de la alineación dental y problemas de mordida para una mejor función y estética.</p>
                     </div>
                 </div>
                 <div class="servicio-card">
+                    <img src="assets/fotos/odontopediatria.png" alt="Odontopediatría" class="bg-card-img">
                     <h4>Odontopediatría</h4>
                     <div class="info-extra">
                         <p>Atención dental integral para niños en todas sus etapas de crecimiento y desarrollo.</p>
                     </div>
                 </div>
                 <div class="servicio-card">
+                    <img src="assets/fotos/protesis.png" alt="Prótesis" class="bg-card-img">
                     <h4>Prótesis fija y removible</h4>
                     <div class="info-extra">
                         <p>Restauración de la anatomía y función de una o más piezas dentales perdidas.</p>
                     </div>
                 </div>
                 <div class="servicio-card">
+                    <img src="assets/fotos/familiar.png" alt="Odontología familiar" class="bg-card-img">
                     <h4>Odontología familiar</h4>
                     <div class="info-extra">
                         <p>Cuidado bucal preventivo y correctivo para pacientes de todas las edades.</p>
@@ -140,11 +159,8 @@
         <section id="especialistas">
             <h2>Nuestros Especialistas</h2>
             <div class="profesionales-container">
-
                 <div class="profesional-card">
-                    <div class="profesional-img">
-                        <img src="assets/fotos/especialistas/elba.png">
-                    </div>
+                    <div class="profesional-img"><img src="assets/fotos/especialistas/elba.png"></div>
                     <h3>Dra. Elba Rivera Del Portillo</h3>
                     <div class="info-extra">
                         <p>Cirujano dentista Universidad de Valparaíso año 2014.</p>
@@ -154,9 +170,7 @@
                 </div>
 
                 <div class="profesional-card">
-                    <div class="profesional-img">
-                        <img src="assets/fotos/especialistas/luis.png">
-                    </div>
+                    <div class="profesional-img"><img src="assets/fotos/especialistas/luis.png"></div>
                     <h3>Dr. Luis Nehme Sancho</h3>
                     <div class="info-extra">
                         <p>Cirujano Dentista Universidad de Valparaíso año 2014.</p>
@@ -165,39 +179,26 @@
                 </div>
 
                 <div class="profesional-card">
-                    <div class="profesional-img">
-                        <img src="assets/fotos/especialistas/manuel.png">
-                    </div>
+                    <div class="profesional-img"><img src="assets/fotos/especialistas/manuel.png"></div>
                     <h3>Dr. Manuel Manríquez</h3>
                     <div class="info-extra">
                         <p>Cirujano dentista Universidad de Valparaíso año 2018.</p>
                         <p>Especialista en Ortodoncia y Ortopedia Dento Maxilo Facial, Universidad de Valparaíso (c).</p>
-                        <p>Diplomado en Diagnóstico de Anomalías Dento Maxilo faciales, Universidad de Chile.</p>
-                        <p>Diplomado en Estabilidad Mandibular, Oclusión Dentaria y Posición Inicial de Tratamiento, Universidad del Desarrollo.</p>
                         <p>Diplomado en Crecimiento y Desarrollo Craneofacial Aplicado a la Ortodoncia Interceptiva, Pontificia Universidad Católica de Chile.</p>
-                        <p>Diplomado en Ortodoncia Interceptiva, Universidad de Valparaíso.</p>
-                        <p>Diplomado en Salud Familiar y Comunitaria, Universidad de los Andes.</p>
                     </div>
                 </div>
 
                 <div class="profesional-card">
-                    <div class="profesional-img">
-                        <img src="assets/fotos/especialistas/shigrid.png">
-                    </div>
+                    <div class="profesional-img"><img src="assets/fotos/especialistas/shigrid.png"></div>
                     <h3>Dra. Shigrid Parra Mella</h3>
                     <div class="info-extra">
                         <p>Cirujano dentista Universidad de Concepción año 2019.</p>
                         <p>Especialista en Odontopediatría Universidad Andrés Bello año 2024.</p>
-                        <p>Diplomado en salud familiar. Diplomado en ortodoncia interceptiva.</p>
-                        <p>Diplomado en sedación y analgesia en odontología.</p>
-                        <p>Curso en aplicación láser diodo en odontología.</p>
                     </div>
                 </div>
 
                 <div class="profesional-card">
-                    <div class="profesional-img">
-                        <img src="assets/fotos/especialistas/daniel.png">
-                    </div>
+                    <div class="profesional-img"><img src="assets/fotos/especialistas/daniel.png"></div>
                     <h3>Dr. Daniel Dalmazzo Contreras</h3>
                     <div class="info-extra">
                         <p>Cirujano Dentista Universidad Mayor, año 2005.</p>
@@ -206,9 +207,7 @@
                 </div>
 
                 <div class="profesional-card">
-                    <div class="profesional-img">
-                        <img src="assets/fotos/especialistas/camilo.png">
-                    </div>
+                    <div class="profesional-img"><img src="assets/fotos/especialistas/camilo.png"></div>
                     <h3>Dr. Camilo Quispe</h3>
                     <div class="info-extra">
                         <p>Cirujano Dentista Universidad de Valparaíso año 2015.</p>
@@ -216,15 +215,12 @@
                 </div>
 
                 <div class="profesional-card">
-                    <div class="profesional-img">
-                        <img src="assets/fotos/especialistas/nicolas.png">
-                    </div>
+                    <div class="profesional-img"><img src="assets/fotos/especialistas/nicolas.png"></div>
                     <h3>Dr. Nicolas Coria Labarca</h3>
                     <div class="info-extra">
                         <p>Cirujano Dentista Universidad de Antofagasta año 2018.</p>
                     </div>
                 </div>
-
             </div>
         </section>
 
@@ -233,91 +229,83 @@
             <p>Simplemente llámenos y reserve una cita. Estamos aquí para ayudar.</p>
             <a href="tel:+56958032626"><button class="llamar">Llamar ahora</button></a>
             <p>o</p>
-            <p>
-                <a href="https://wa.me/56958032626" target="_blank">
-                    <button class="whatsapp-btn">Escríbenos por WhatsApp</button>
-                </a>
-            </p>
+            <p><a href="https://wa.me/56958032626" target="_blank"><button class="whatsapp-btn">Escríbenos por WhatsApp</button></a></p>
         </section>
 
-<section id="consejos">
-    <h2>Consejos de Salud Bucal</h2>
+        <section id="consejos">
+            <h2>Consejos de Salud Bucal</h2>
+            <div class="tips-container">
+                <div class="tip-card-img" style="background-image: url('assets/fotos/consejos/caries.png');">
+                    <h3>Caries</h3>
+                    <div class="tip-overlay">
+                        <ul>
+                            <li>Cepilla tus dientes 3 veces al día.</li>
+                            <li>Reduce azúcares.</li>
+                            <li>Usa hilo dental.</li>
+                            <li>Visita al dentista.</li>
+                        </ul>
+                    </div>
+                </div>
 
-    <div class="tips-container">
+                <div class="tip-card-img" style="background-image: url('assets/fotos/consejos/encias.png');">
+                    <h3>Encías</h3>
+                    <div class="tip-overlay">
+                        <ul>
+                            <li>Evita placa bacteriana.</li>
+                            <li>Limpiezas periódicas.</li>
+                            <li>No ignores sangrado.</li>
+                        </ul>
+                    </div>
+                </div>
 
-        <div class="tip-card-img" style="background-image: url('assets/fotos/consejos/caries.png');">
-            <h3>Caries</h3>
-            <div class="tip-overlay">
-                <ul>
-                    <li>Cepilla tus dientes 3 veces al día.</li>
-                    <li>Reduce azúcares.</li>
-                    <li>Usa hilo dental.</li>
-                    <li>Visita al dentista.</li>
-                </ul>
+                <div class="tip-card-img" style="background-image: url('assets/fotos/consejos/blanqueamiento.png');">
+                    <h3>Blanqueamiento</h3>
+                    <div class="tip-overlay">
+                        <ul>
+                            <li>Limpieza previa obligatoria.</li>
+                            <li>Evitar café y vino.</li>
+                            <li>Usar pasta desensibilizante.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tip-card-img" style="background-image: url('assets/fotos/consejos/ortodoncia.png');">
+                    <h3>Ortodoncia</h3>
+                    <div class="tip-overlay">
+                        <ul>
+                            <li>Corrige alineación dental.</li>
+                            <li>Mejora funciones.</li>
+                            <li>Evaluación temprana.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tip-card-img" style="background-image: url('assets/fotos/consejos/protesis.png');">
+                    <h3>Prótesis</h3>
+                    <div class="tip-overlay">
+                        <ul>
+                            <li>Limpia después de comer.</li>
+                            <li>No dormir con ella.</li>
+                            <li>No repararla tú mismo.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tip-card-img warning" style="background-image: url('assets/fotos/consejos/habitos.png');">
+                    <h3>Malos hábitos</h3>
+                    <div class="tip-overlay">
+                        <ul>
+                            <li>Usar dientes como herramientas.</li>
+                            <li>Masticar hielo directo.</li>
+                            <li>No morder objetos</li>
+                            <li>No morder uñas</li>
+                            <li>No fumar.</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-        </div>
-
-        <div class="tip-card-img" style="background-image: url('assets/fotos/consejos/encias.png');">
-            <h3>Encías</h3>
-            <div class="tip-overlay">
-                <ul>
-                    <li>Evita placa bacteriana.</li>
-                    <li>Limpiezas periódicas.</li>
-                    <li>No ignores sangrado.</li>
-                    <li>Control cada 3-6 meses.</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="tip-card-img" style="background-image: url('assets/fotos/consejos/blanqueamiento.png');">
-            <h3>Blanqueamiento</h3>
-            <div class="tip-overlay">
-                <ul>
-                    <li>Limpieza previa obligatoria.</li>
-                    <li>Evitar café y vino.</li>
-                    <li>No en embarazadas.</li>
-                    <li>Usar pasta desensibilizante.</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="tip-card-img" style="background-image: url('assets/fotos/consejos/ortodoncia.png');">
-            <h3>Ortodoncia</h3>
-            <div class="tip-overlay">
-                <ul>
-                    <li>Corrige alineación dental.</li>
-                    <li>Mejora funciones.</li>
-                    <li>Duración 1 a 3 años.</li>
-                    <li>Evaluación temprana.</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="tip-card-img" style="background-image: url('assets/fotos/consejos/protesis.png');">
-            <h3>Prótesis</h3>
-            <div class="tip-overlay">
-                <ul>
-                    <li>Limpia después de cada comida.</li>
-                    <li>No dormir con ella.</li>
-                    <li>Desinfección semanal.</li>
-                    <li>No repararla tú mismo.</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="tip-card-img warning" style="background-image: url('assets/fotos/consejos/habitos.png');">
-            <h3>Malos hábitos</h3>
-            <div class="tip-overlay">
-                <ul>
-                    <li>No morder uñas.</li>
-                    <li>No morder objetos.</li>
-                    <li>No fumar.</li>
-                </ul>
-            </div>
-        </div>
-
-    </div>
-</section>
+        </section>
+    </main>
 
     <footer>
         <div class="footer-grid">
@@ -336,58 +324,6 @@
             <p>&copy; 2026 N&R Dental. Todos los derechos reservados.</p>
         </div>
     </footer>
-
-    <script>
-    let slides = document.querySelectorAll(".slide");
-    let prev = document.querySelector(".prev");
-    let next = document.querySelector(".next");
-    let dotsContainer = document.querySelector(".dots");
-
-    let index = 0;
-    let interval;
-
-    slides.forEach((_, i) => {
-        let dot = document.createElement("span");
-        dot.addEventListener("click", () => showSlide(i));
-        dotsContainer.appendChild(dot);
-    });
-
-    let dots = document.querySelectorAll(".dots span");
-
-    function showSlide(i) {
-        slides[index].classList.remove("active");
-        dots[index].classList.remove("active");
-
-        index = i;
-
-        slides[index].classList.add("active");
-        dots[index].classList.add("active");
-    }
-
-    next.onclick = () => {
-        showSlide((index + 1) % slides.length);
-        resetInterval();
-    };
-
-    prev.onclick = () => {
-        showSlide((index - 1 + slides.length) % slides.length);
-        resetInterval();
-    };
-
-    function startInterval() {
-        interval = setInterval(() => {
-            showSlide((index + 1) % slides.length);
-        }, 8000);
-    }
-
-    function resetInterval() {
-        clearInterval(interval);
-        startInterval();
-    }
-
-    dots[0].classList.add("active");
-    startInterval();
-    </script>
 
 </body>
 </html>
