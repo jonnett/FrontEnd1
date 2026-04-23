@@ -348,6 +348,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // CARRUSEL (Original)
             const slides = document.querySelectorAll('#mainCarousel .slide');
             const dots = document.querySelectorAll('.dot');
             const nextBtn = document.getElementById('nextBtn');
@@ -370,34 +371,51 @@
             if (nextBtn) nextBtn.addEventListener('click', () => { nextSlide(); resetInterval(); });
             if (prevBtn) prevBtn.addEventListener('click', () => { showSlide(currentIndex - 1); resetInterval(); });
             dots.forEach((dot, idx) => dot.addEventListener('click', () => { showSlide(idx); resetInterval(); }));
-
             startAutoSlide();
 
+            // MENÚ MÓVIL Y DROPDOWN (Lógica blindada)
             const dropbtn = document.querySelector('.dropbtn');
+            const dropdown = document.querySelector('.dropdown');
             const dropdownContent = document.querySelector('.dropdown-content');
             const menuToggle = document.getElementById('menu-toggle');
 
             if (dropbtn) {
-                dropbtn.addEventListener('click', (e) => {
+                dropbtn.addEventListener('click', function(e) {
                     if (window.innerWidth <= 768) {
                         e.preventDefault();
                         e.stopPropagation();
-                        dropdownContent.classList.toggle('active-mobile');
+                        
+                        // Alternamos una clase en el PADRE para tener más control
+                        const isOpen = dropdown.classList.contains('is-open');
+                        
+                        if (isOpen) {
+                            dropdown.classList.remove('is-open');
+                        } else {
+                            dropdown.classList.add('is-open');
+                        }
                     }
                 });
             }
 
-            const navLinks = document.querySelectorAll('.nav-menu a:not(.dropbtn)');
-            navLinks.forEach(link => {
+            // Cerrar menú al hacer clic en cualquier link (que no sea el de Precios)
+            const allLinks = document.querySelectorAll('.nav-menu a:not(.dropbtn)');
+            allLinks.forEach(link => {
                 link.addEventListener('click', () => {
                     if (menuToggle) menuToggle.checked = false;
-                    if (dropdownContent) dropdownContent.classList.remove('active-mobile');
+                    dropdown.classList.remove('is-open');
                 });
             });
 
+            // Cerrar si se hace clic fuera del menú
+            document.addEventListener('click', (e) => {
+                if (!dropdown.contains(e.target) && dropdown.classList.contains('is-open')) {
+                    dropdown.classList.remove('is-open');
+                }
+            });
+
             window.addEventListener('resize', () => {
-                if (window.innerWidth > 768 && dropdownContent) {
-                    dropdownContent.classList.remove('active-mobile');
+                if (window.innerWidth > 768) {
+                    dropdown.classList.remove('is-open');
                 }
             });
         });

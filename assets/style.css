@@ -103,12 +103,10 @@ nav {
     border-top: 3px solid var(--color-principal);
 }
 
-.dropdown-content.active-mobile {
-    display: block !important;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
+@media (min-width: 769px) {
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
 }
 
 .dropdown-section {
@@ -194,10 +192,9 @@ nav {
     color: var(--blanco);
 }
 
-/* --- CAMBIO CRÍTICO AQUÍ --- */
 .mini-carrusel {
     width: 100%;
-    max-width: 400px; /* Para que no se agrande infinito en PC */
+    max-width: 400px;
     margin: 0 auto;
     overflow: hidden;
     border-radius: 12px;
@@ -208,17 +205,15 @@ nav {
 .mini-track {
     display: flex;
     width: 300%;
-    /* Quitamos el height: 100% para que las imágenes definan la altura */
     animation: autoScrollMini 12s infinite ease-in-out;
 }
 
 .mini-track img {
-    width: calc(100% / 3); /* Cada imagen ocupa exactamente un tercio del track (100% del contenedor) */
-    height: auto; /* IMPORTANTE: Mantiene la proporción real de la imagen */
+    width: calc(100% / 3);
+    height: auto;
     display: block;
     object-fit: contain;
 }
-/* --------------------------- */
 
 @keyframes autoScrollMini {
     0%, 20% { transform: translateX(0); }
@@ -249,10 +244,6 @@ section {
 .carousel-container {
     position: relative;
     width: 100%;
-}
-
-input[name="slider"] {
-    display: none;
 }
 
 .nosotros-carousel {
@@ -607,6 +598,10 @@ footer {
         margin-top: 10px;
     }
 
+    .dropdown.is-open .dropdown-content {
+        display: block !important;
+    }
+
     .dropdown-section h4 {
         font-size: 0.85rem;
     }
@@ -619,7 +614,6 @@ footer {
         text-align: center;
     }
     
-    /* En móvil, permitimos que el carrusel sea más ancho si es necesario */
     .mini-carrusel {
         max-width: 100%;
     }
