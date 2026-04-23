@@ -6,6 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>N&R Dental | Clínica Odontológica Copiapó</title>
     <link rel="icon" href="assets/fotos/icono N&R.png">
+    <style>
+        @media (max-width: 768px) {
+            .dropdown-content {
+                display: none !important;
+                position: static;
+                width: 100%;
+            }
+            .dropdown-content.active-mobile {
+                display: block !important;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -83,8 +95,8 @@
                             <p>Somos una clínica dental familiar con más de 10 años de trayectoria cuidando la sonrisa de nuestra comunidad</p>
                         </div>
                         <div class="arrows">
-                            <label for="s4" class="prev">&#10094;</label>
-                            <label for="s2" class="next">&#10095;</label>
+                            <label for="s4" class="prev">❮</label>
+                            <label for="s2" class="next">❯</label>
                         </div>
                     </div>
 
@@ -94,8 +106,8 @@
                             <p>En NyR Dental, combinamos la experiencia de especialistas titulados en las mejores universidades del país con la innovación de la odontología digital y biomateriales de alta gama.</p>
                         </div>
                         <div class="arrows">
-                            <label for="s1" class="prev">&#10094;</label>
-                            <label for="s3" class="next">&#10095;</label>
+                            <label for="s1" class="prev">❮</label>
+                            <label for="s3" class="next">❯</label>
                         </div>
                     </div>
 
@@ -105,8 +117,8 @@
                             <p>Creemos que una atención de excelencia no debe perder la calidez. Por eso, aquí no solo encontrarás tecnología de vanguardia, sino también un equipo que te recibe como parte de su propia familia</p>
                         </div>
                         <div class="arrows">
-                            <label for="s2" class="prev">&#10094;</label>
-                            <label for="s4" class="next">&#10095;</label>
+                            <label for="s2" class="prev">❮</label>
+                            <label for="s4" class="next">❯</label>
                         </div>
                     </div>
 
@@ -116,8 +128,8 @@
                             <p>Nos caracterizamos por nuestra cercanía, ética profesional y el compromiso de ofrecer siempre un precio justo.</p>
                         </div>
                         <div class="arrows">
-                            <label for="s3" class="prev">&#10094;</label>
-                            <label for="s1" class="next">&#10095;</label>
+                            <label for="s3" class="prev">❮</label>
+                            <label for="s1" class="next">❯</label>
                         </div>
                     </div>
                 </div>
@@ -345,9 +357,44 @@
             </div>
         </div>
         <div class="copyright">
-            <p>&copy; 2026 N&R Dental. Todos los derechos reservados.</p>
+            <p>© 2026 N&R Dental. Todos los derechos reservados.</p>
         </div>
     </footer>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const dropbtn = document.querySelector('.dropbtn');
+            const dropdownContent = document.querySelector('.dropdown-content');
+            const menuToggle = document.getElementById('menu-toggle');
+
+            // Toggle para móvil (Precios)
+            if (dropbtn) {
+                dropbtn.addEventListener('click', (e) => {
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        // Esto añade o quita la clase. El CSS arriba hará el resto.
+                        dropdownContent.classList.toggle('active-mobile');
+                    }
+                });
+            }
+
+            // Cerrar menú hamburguesa al navegar
+            const navLinks = document.querySelectorAll('.nav-menu a:not(.dropbtn)');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (menuToggle) menuToggle.checked = false;
+                    dropdownContent.classList.remove('active-mobile');
+                });
+            });
+
+            // Si cambias a PC, limpiamos la clase de móvil
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 768) {
+                    dropdownContent.classList.remove('active-mobile');
+                }
+            });
+        });
+    </script>
 </body>
 </html>

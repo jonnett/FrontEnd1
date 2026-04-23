@@ -543,13 +543,18 @@ footer {
 
     .dropdown-content {
         position: static;
-        display: block;
+        display: none; 
         box-shadow: none;
         width: 100%;
         padding: 15px 0;
         background-color: transparent;
         border-top: 1px solid #eee;
         margin-top: 10px;
+    }
+
+  
+    .dropdown-content.active {
+        display: block;
     }
 
     .dropdown-section h4 {
